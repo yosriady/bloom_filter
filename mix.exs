@@ -3,11 +3,30 @@ defmodule BloomFilter.Mixfile do
 
   def project do
     [app: :bloom_filter,
-     version: "0.0.1",
+     version: "1.0.0",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
+  end
+
+  defp description do
+    """
+    Bloom Filter implementation in Elixir. Bloom filters are probabilistic data structures designed
+    to efficiently tell you whether an element is present in a set.
+    """
+  end
+
+  defp package do
+    [
+     files: ["lib", "mix.exs", "README.md"],
+     maintainers: ["Yos Riady"],
+     licenses: ["Apache 2.0"],
+     links: %{"GitHub" => "https://github.com/Leventhan/bloom_filter",
+              "Docs" => "http://hexdocs.pm/bloom_filter/"}
+     ]
   end
 
   # Configuration for the OTP application

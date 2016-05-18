@@ -1,20 +1,19 @@
 # BloomFilter
 
-**TODO: Add description**
+Bloom Filter implementation in Elixir. Bloom filters are probabilistic data structures designed
+to efficiently tell you whether an element is present in a set.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
-
-  1. Add bloom_filter to your list of dependencies in `mix.exs`:
+    Add bloom_filter to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:bloom_filter, "~> 0.0.1"}]
+          [{:bloom_filter, "~> 1.0.0"}]
         end
 
-  2. Ensure bloom_filter is started before your application:
+## Usage
 
-        def application do
-          [applications: [:bloom_filter]]
-        end
-
+    iex> f = BloomFilter.new 100, 0.001
+    iex> f = BloomFilter.add(f, 42)
+    iex> BloomFilter.has?(f, 42)
+    true
