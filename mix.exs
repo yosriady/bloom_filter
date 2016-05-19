@@ -3,7 +3,7 @@ defmodule BloomFilter.Mixfile do
 
   def project do
     [app: :bloom_filter,
-     version: "1.0.0",
+     version: "1.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -23,7 +23,7 @@ defmodule BloomFilter.Mixfile do
     [
      files: ["lib", "mix.exs", "README.md"],
      maintainers: ["Yos Riady"],
-     licenses: ["Apache 2.0"],
+     licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/Leventhan/bloom_filter",
               "Docs" => "http://hexdocs.pm/bloom_filter/"}
      ]
