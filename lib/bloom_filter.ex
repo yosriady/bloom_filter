@@ -15,7 +15,7 @@ defmodule BloomFilter do
   defstruct [:bits, :num_bits, :capacity, :error_rate, :hash_functions]
 
   @type bit :: 0 | 1
-  @type hash_func :: hash_func
+  @type hash_func :: (any -> pos_integer)
   @type t :: %BloomFilter{
     bits: [bit, ...],
     num_bits: pos_integer,
