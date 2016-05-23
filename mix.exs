@@ -24,7 +24,7 @@ defmodule BloomFilter.Mixfile do
      files: ["lib", "mix.exs", "README.md"],
      maintainers: ["Yos Riady"],
      licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/Leventhan/bloom_filter",
+     links: %{"GitHub" => "https://github.com/yosriady/bloom_filter",
               "Docs" => "http://hexdocs.pm/bloom_filter/"}
      ]
   end
