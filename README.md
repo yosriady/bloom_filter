@@ -3,6 +3,10 @@
 Bloom Filter implementation in Elixir. Bloom filters are probabilistic data structures designed
 to efficiently tell you whether an element is present in a set.
 
+[![Travis](https://travis-ci.org/yosriady/bloom_filter.svg)](https://travis-ci.org/yosriady/bloom_filter)
+[![Coverage Status](https://coveralls.io/repos/github/yosriady/bloom_filter/badge.svg?branch=master)](https://coveralls.io/github/yosriady/bloom_filter?branch=master)
+[![Hex.pm](https://img.shields.io/hexpm/v/bloom_filter.svg?maxAge=2592000)](https://hex.pm/packages/bloom_filter)
+
 ### [Hex](http://hex.pm/packages/bloom_filter)
 ### [API Documentation](https://hexdocs.pm/bloom_filter/)
 

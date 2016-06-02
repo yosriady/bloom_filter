@@ -9,7 +9,8 @@ defmodule BloomFilter.Mixfile do
      start_permanent: Mix.env == :prod,
      description: description,
      package: package,
-     deps: deps]
+     deps: deps,
+     test_coverage: [tool: ExCoveralls]]
   end
 
   defp description do
@@ -50,6 +51,7 @@ defmodule BloomFilter.Mixfile do
      {:fnv, "~> 0.3.2 "},
      {:ex_doc, "~> 0.11", only: :dev},
      {:earmark, "~> 0.1", only: :dev},
-     {:dialyxir, "~> 0.3", only: [:dev]}]
+     {:dialyxir, "~> 0.3", only: :dev},
+     {:excoveralls, "~> 0.5", only: :test}]
   end
 end
