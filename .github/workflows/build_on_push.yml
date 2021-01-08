@@ -1,0 +1,46 @@
+name: Build on push
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: OTP ${{ matrix.otp }} / Elixir ${{ matrix.elixir }}
+    strategy:
+      matrix:
+        otp: ["22.0"]
+        elixir: ["1.9"]
+    env:
+      MIX_ENV: test
+
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - uses: actions/cache@v1
+        name: Cache deps
+        with:
+          path: deps
+          key: deps-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            deps-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}
+
+      - uses: actions/cache@v1
+        name: Cache _build
+        with:
+          path: _build
+          key: build-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            build-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}
+
+      - uses: actions/setup-elixir@v1
+        name: Setup elixir
+        with:
+          otp-version: ${{matrix.otp}}
+          elixir-version: ${{matrix.elixir}}
+
+      - run: mix deps.get
+      - run: mix compile
+      - run: mix test --trace --preload-modules
+      - run: mix dialyzer
+      - run: mix format --check-formatted
