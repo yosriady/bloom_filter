@@ -38,7 +38,12 @@ defmodule BloomFilter.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [
+      extra_applications: [
+        :math,
+        :logger
+      ]
+    ]
   end
 
   # Dependencies can be Hex packages:
