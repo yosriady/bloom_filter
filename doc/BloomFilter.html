@@ -1,324 +1,415 @@
-    <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.11.5">
-    <title>BloomFilter – bloom_filter v1.0.1</title>
-    <link rel="stylesheet" href="dist/app-ddd9717ad9.css" />
-    
+    <meta name="generator" content="ExDoc v0.23.0">
+    <meta name="project" content="bloom_filter v1.1.0">
+
+    <title>BloomFilter — bloom_filter v1.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-9f91ebe876dc01d67920.css" />
+
       <link rel="canonical" href="https://hexdocs.pm/bloom_filter/BloomFilter.html" />
-    
-    <script src="dist/sidebar_items.js"></script>
+
+    <script src="dist/sidebar_items-1b6c614570.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-60a0c9f10e9e52eae31f.js"></script>
+
+
   </head>
   <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
 
-    <div class="main">
-<button class="sidebar-toggle">
-  <i class="icon-menu"></i>
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
 </button>
+
 <section class="sidebar">
-  <button class="sidebar-toggle">
-    <i class="icon-menu"></i>
-  </button>
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
 
-  
-  <a href="api-reference.html" class="sidebar-projectLink">
-    <div class="sidebar-projectDetails">
-      <h1 class="sidebar-projectName">
-        bloom_filter
-      </h1>
-      <h2 class="sidebar-projectVersion">
-        v1.0.1
-      </h2>
+  <div class="autocomplete">
+    <div class="autocomplete-results">
     </div>
-    
-  </a>
+  </div>
 
-  <div class="sidebar-search">
-    <i class="icon-search"></i>
-    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" />
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName">
+bloom_filter
+      </a>
+      <strong class="sidebar-projectVersion">
+        v1.1.0
+      </strong>
+    </div>
+
   </div>
 
   <ul class="sidebar-listNav">
     <li><a id="extras-list" href="#full-list">Pages</a></li>
 
-    
       <li><a id="modules-list" href="#full-list">Modules</a></li>
-    
 
-    
 
-    
   </ul>
-
+  <div class="gradient"></div>
   <ul id="full-list" class="sidebar-fullList"></ul>
-  <div class="sidebar-noResults"></div>
 </section>
 
 <section class="content">
-  <div id="content" class="content-inner">
-
+  <div class="content-outer">
+    <div id="content" class="content-inner">
 
       <h1>
-        <small class="visible-xs">bloom_filter v1.0.1</small>
-        BloomFilter
-        
-        
+BloomFilter <small class="app-vsn">(bloom_filter v1.1.0)</small>
+
       </h1>
 
-      
-        <section id="moduledoc" class="docstring">
-          <p>  Bloom Filter implementation in Elixir. Bloom filters are probabilistic data structures designed
-  to efficiently tell you whether an element is present in a set.</p>
-<pre><code class="elixir">  ## Usage Example
 
-    iex&gt; f = BloomFilter.new 100, 0.001
-    iex&gt; f = BloomFilter.add(f, 42)
-    iex&gt; BloomFilter.has?(f, 42)
-    true</code></pre>
+        <section id="moduledoc">
+<p>  Bloom Filter implementation in Elixir. Bloom filters are probabilistic data structures designed
+  to efficiently tell you whether an element is present in a set.</p><pre><code class="nohighlight makeup elixir"><span class="w">  </span><span class="c1">## Usage Example</span><span class="w">
 
+    </span><span class="gp unselectable">iex&gt; </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">BloomFilter</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mf">0.001</span><span class="w">
+    </span><span class="gp unselectable">iex&gt; </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">BloomFilter</span><span class="o">.</span><span class="n">add</span><span class="p" data-group-id="8193036473-1">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="8193036473-1">)</span><span class="w">
+    </span><span class="gp unselectable">iex&gt; </span><span class="nc">BloomFilter</span><span class="o">.</span><span class="n">has?</span><span class="p" data-group-id="8193036473-2">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="8193036473-2">)</span><span class="w">
+    </span><span class="no">true</span></code></pre>
         </section>
-      
 
-      
+
         <section id="summary" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#summary">
-              <i class="icon-link"></i>
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
             </a>
             Summary
           </h1>
-          
+
   <div class="summary-types summary">
     <h2>
       <a href="#types">Types</a>
     </h2>
-    <div class="summary-row">
+<div class="summary-row">
   <div class="summary-signature">
     <a href="#t:bit/0">bit()</a>
+
   </div>
-  
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#t:hash_func/0">hash_func()</a>
+
   </div>
-  
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#t:t/0">t()</a>
+
   </div>
-  
+
 </div>
 
   </div>
 
-
-          
   <div class="summary-functions summary">
     <h2>
       <a href="#functions">Functions</a>
     </h2>
-    <div class="summary-row">
+<div class="summary-row">
   <div class="summary-signature">
     <a href="#add/2">add(bloom, item)</a>
+
   </div>
-  
-    <div class="summary-synopsis"><p>Adds a given item to the set</p>
-</div>
-  
+
+    <div class="summary-synopsis"><p>  Adds a given item to the set.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#count/1">count(bloom_filter)</a>
+
   </div>
-  
-    <div class="summary-synopsis"><p>Approximates the number of items in the filter</p>
-</div>
-  
+
+    <div class="summary-synopsis"><p>  Approximates the number of items in the filter.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#has?/2">has?(bloom_filter, item)</a>
+
   </div>
-  
-    <div class="summary-synopsis"><p>Checks whether a given item is likely to exist in the set</p>
-</div>
-  
+
+    <div class="summary-synopsis"><p>  Checks whether a given item is likely to exist in the set.</p></div>
+
 </div>
 <div class="summary-row">
   <div class="summary-signature">
     <a href="#new/2">new(capacity, error_rate)</a>
-  </div>
-  
-    <div class="summary-synopsis"><p>Creates a new bloom filter, given an estimated number of elements and a desired error rate (0.0..1)</p>
-</div>
-  
-</div>
 
   </div>
 
+    <div class="summary-synopsis"><p>  Creates a new bloom filter, given an estimated number of elements and a desired error rate (0.0..1).</p></div>
 
-          
+</div>
 
-          
+  </div>
 
         </section>
-      
 
-      
-        <section id="types" class="types details-list">
+
+        <section id="types" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#types">
-              <i class="icon-link"></i>
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
             </a>
-            Types
+Types
           </h1>
           <div class="types-list">
-            <div id="t:bit/0" class="type-detail">
-  <pre><code class="elixir"><a href="#t:bit/0">bit</a> :: 0 | 1</code></pre>
-  
-</div>
-<div id="t:hash_func/0" class="type-detail">
-  <pre><code class="elixir"><a href="#t:hash_func/0">hash_func</a> :: (any -> pos_integer)</code></pre>
-  
-</div>
-<div id="t:t/0" class="type-detail">
-  <pre><code class="elixir"><a href="#t:t/0">t</a> :: %BloomFilter{bits: [<a href="#t:bit/0">bit</a>, ...], capacity: pos_integer, error_rate: float, hash_functions: [<a href="#t:hash_func/0">hash_func</a>, ...], num_bits: pos_integer}</code></pre>
-  
-</div>
+<section class="detail" id="t:bit/0">
+
+  <div class="detail-header">
+    <a href="#t:bit/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">bit()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>bit() :: 0 | 1</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:hash_func/0">
+
+  <div class="detail-header">
+    <a href="#t:hash_func/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">hash_func()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>hash_func() :: (<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>() -&gt; <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>())</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature">t()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>t() :: %BloomFilter{
+  bits: [<a href="#t:bit/0">bit</a>(), ...],
+  capacity: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>(),
+  error_rate: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>(),
+  hash_functions: [<a href="#t:hash_func/0">hash_func</a>(), ...],
+  num_bits: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
 
           </div>
         </section>
-      
 
-      
         <section id="functions" class="details-list">
           <h1 class="section-heading">
             <a class="hover-link" href="#functions">
-              <i class="icon-link"></i>
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
             </a>
-            Functions
+Functions
           </h1>
-          <div class="detail" id="add/2">
+          <div class="functions-list">
+<section class="detail" id="add/2">
+
   <div class="detail-header">
     <a href="#add/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">add(bloom, item)</span>
-      
-  </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
-        
-          <pre><code class="elixir">add(<a href="#t:t/0">t</a>, any) :: <a href="#t:t/0">t</a></code></pre>
-        
-      </div>
-    </div>
-  
-  <section class="docstring">
-    <p>  Adds a given item to the set.</p>
+    <h1 class="signature">add(bloom, item)</h1>
 
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>add(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: <a href="#t:t/0">t</a>()</pre>
+
+      </div>
+
+<p>  Adds a given item to the set.</p>
   </section>
-</div>
-<div class="detail" id="count/1">
+</section>
+<section class="detail" id="count/1">
+
   <div class="detail-header">
     <a href="#count/1" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">count(bloom_filter)</span>
-      
-  </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
-        
-          <pre><code class="elixir">count(<a href="#t:t/0">t</a>) :: float</code></pre>
-        
-      </div>
-    </div>
-  
-  <section class="docstring">
-    <p>  Approximates the number of items in the filter.</p>
+    <h1 class="signature">count(bloom_filter)</h1>
 
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>count(<a href="#t:t/0">t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()</pre>
+
+      </div>
+
+<p>  Approximates the number of items in the filter.</p>
   </section>
-</div>
-<div class="detail" id="has?/2">
+</section>
+<section class="detail" id="has?/2">
+
   <div class="detail-header">
     <a href="#has?/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">has?(bloom_filter, item)</span>
-      
-  </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
-        
-          <pre><code class="elixir">has?(<a href="#t:t/0">t</a>, any) :: boolean</code></pre>
-        
-      </div>
-    </div>
-  
-  <section class="docstring">
-    <p>  Checks whether a given item is likely to exist in the set.</p>
+    <h1 class="signature">has?(bloom_filter, item)</h1>
 
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>has?(<a href="#t:t/0">t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>  Checks whether a given item is likely to exist in the set.</p>
   </section>
-</div>
-<div class="detail" id="new/2">
+</section>
+<section class="detail" id="new/2">
+
   <div class="detail-header">
     <a href="#new/2" class="detail-link" title="Link to this function">
-      <i class="icon-link"></i>
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">new(capacity, error_rate)</span>
-      
+    <h1 class="signature">new(capacity, error_rate)</h1>
+
+
   </div>
-  
-    <div class="specs">
-      <h4 class="specs-title">Specs</h4>
-      <div class="specs-list">
-        
-          <pre><code class="elixir">new(pos_integer, float) :: <a href="#t:t/0">t</a></code></pre>
-        
-      </div>
-    </div>
-  
+
   <section class="docstring">
-    <p>  Creates a new bloom filter, given an estimated number of elements and a desired error rate (0.0..1).</p>
 
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>new(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()) :: <a href="#t:t/0">t</a>()</pre>
+
+      </div>
+
+<p>  Creates a new bloom filter, given an estimated number of elements and a desired error rate (0.0..1).</p>
   </section>
-</div>
+</section>
 
+          </div>
         </section>
-      
 
-      
-
-      
-        <footer class="footer">
-      <p>
-        <span class="line">
-          Built using
-          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.11.5),
-        </span>
-        <span class="line">
-          designed by
-          <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.23.0) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
           </span>
-      </p>
-      <button class="night-mode-toggle" />
-    </footer>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
   </div>
 </section>
 </div>
-  <script src="dist/app-918614602f.js"></script>
+
+
   </body>
 </html>
-
