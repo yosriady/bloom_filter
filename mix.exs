@@ -57,7 +57,8 @@ defmodule BloomFilter.Mixfile do
       {:ex_doc, "~> 0.23", only: :dev},
       {:earmark, "~> 1.4", only: :dev},
       {:dialyxir, "~> 1.0", only: :dev},
-      {:excoveralls, "~> 0.13.4", only: :test}
+      {:excoveralls, "~> 0.13.4", only: :test},
+      {:propcheck, "~> 1.3", only: [:test, :dev]}
     ]
   end
 end
